@@ -1,0 +1,60 @@
+{
+  "product": {
+    "create": {
+      "title": "Playwright API Test Product",
+      "price": 19.99,
+      "description": "Deterministic product payload for API tests",
+      "image": "https://example.com/playwright-api-product.png",
+      "category": "electronics"
+    },
+    "update": {
+      "title": "Updated Playwright API Test Product",
+      "price": 29.99,
+      "description": "Updated deterministic product payload for API tests",
+      "image": "https://example.com/updated-playwright-api-product.png",
+      "category": "electronics"
+    }
+  },
+  "user": {
+    "create": {
+      "email": "playwright.api.user@example.com",
+      "username": "playwright_api_user",
+      "password": "PlaywrightTestPassword123",
+      "name": {
+        "firstname": "Playwright",
+        "lastname": "API"
+      },
+      "address": {
+        "city": "Test City",
+        "street": "Test Street",
+        "number": 10,
+        "zipcode": "12345",
+        "geolocation": {
+          "lat": "0",
+          "long": "0"
+        }
+      },
+      "phone": "555-0100"
+    },
+    "update": {
+      "email": "updated.playwright.api.user@example.com",
+      "username": "updated_playwright_api_user",
+      "password": "UpdatedPlaywrightTestPassword123",
+      "name": {
+        "firstname": "Updated",
+        "lastname": "Playwright"
+      },
+      "address": {
+        "city": "Updated Test City",
+        "street": "Updated Test Street",
+        "number": 11,
+        "zipcode": "54321",
+        "geolocation": {
+          "lat": "1",
+          "long": "1"
+        }
+      },
+      "phone": "555-0101"
+    }
+  }
+}

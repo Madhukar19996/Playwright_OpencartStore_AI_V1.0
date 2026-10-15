@@ -1,0 +1,1 @@
+Login scenario "Invalid login" completed with expected failure result.

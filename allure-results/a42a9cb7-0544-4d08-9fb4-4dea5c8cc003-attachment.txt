@@ -1,0 +1,4 @@
+Error reading login error message: Error: locator.textContent: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('.alert-danger')
+
