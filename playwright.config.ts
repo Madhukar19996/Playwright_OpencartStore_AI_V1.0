@@ -1,4 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
+import reportingLabs from './reporting-labs.config';
+
 
 export default defineConfig({
   timeout: 30 * 1000, //30000 ms(30 secs)
@@ -8,6 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     ["list"], // Detailed console output
+    ['reporting-labs', reportingLabs],   // <- add this line
     //['line'], // One-line progress output
     //['dot'], // Minimal console output
     ["html", { open: "never", outputFolder: "reports" }], // HTML Report
