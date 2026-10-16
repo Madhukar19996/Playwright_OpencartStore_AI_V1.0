@@ -34,7 +34,7 @@ on:
         options:
           - headless
           - headed
-        default: "headed"
+        default: "headless"
 
 jobs:
   test:
@@ -59,16 +59,16 @@ jobs:
         run: Copy-Item .env.example .env
 
       - name: 🧪 Run Playwright Tests
-        run: |
-          $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
-          $browser = "${{ github.event.inputs.browser || 'chromium' }}"
-          $mode = "${{ github.event.inputs.mode || 'headed' }}"
-          $tag = $suite -replace 'test:', ''
-          $browserFlag = "--project=$browser"
-          $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
-          npx playwright test --grep "@$tag" $browserFlag $modeFlag --reporter=dot --output=test-results
+        shell: pwsh
         env:
           CI: "1"
+          SUITE: ${{ github.event.inputs.test_suite || 'test:e2e' }}
+          BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
+          MODE: ${{ github.event.inputs.mode || 'headless' }}
+        run: |
+          $extra = @("--project=$env:BROWSER")
+          if ($env:MODE -eq 'headed') { $extra += '--headed' }
+          npm run $env:SUITE -- @extra
 
       - name: 📊 Upload Playwright HTML Report
         if: always()
