@@ -641,6 +641,8 @@ Commit message, Branch, Push result (Successful or Failed or No changes to push)
 
 > **Why this matters:** A GitHub Actions workflow automatically runs your tests, for example on every push or pull request, and stores the resulting reports without anyone needing to run them manually.
 
+This workflow requires a Windows self-hosted runner labelled `self-hosted`, `Windows`, and `X64`. The runner must be able to reach both the FakeStore API and OpenCart test site; GitHub-hosted runner IPs receive HTTP 403 from FakeStore. Do not run untrusted fork pull requests on a self-hosted runner.
+
 #### `.github/workflows/playwright.yml`
 
 ```yaml
@@ -685,7 +687,8 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, Windows, X64]
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4

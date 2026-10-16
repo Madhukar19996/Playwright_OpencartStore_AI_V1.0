@@ -39,7 +39,9 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    # FakeStore blocks GitHub-hosted runner IPs; use a trusted Windows runner on an allowed network.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, Windows, X64]
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
