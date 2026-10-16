@@ -1,4 +1,5 @@
-# To run manually: go to your repo → Actions → Playwright Tests → Run workflow → choose your parameters → Run.
+#To run manually: go to your repo → Actions → Playwright Tests → Run workflow → choose your parameters → Run.
+
 name: 🎭 Playwright Tests
 
 on:
@@ -39,14 +40,13 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    # FakeStore blocks GitHub-hosted runner IPs; use a trusted Windows runner on an allowed network.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: windows-latest
+
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: 🟢 Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
@@ -61,16 +61,16 @@ jobs:
         run: Copy-Item .env.example .env
 
       - name: 🧪 Run Playwright Tests
-        shell: pwsh
+        run: |
+          $suite = "${{ github.event.inputs.test_suite || 'test:master' }}"
+          $browser = "${{ github.event.inputs.browser || 'chromium' }}"
+          $mode = "${{ github.event.inputs.mode || 'headless' }}"
+          $tag = $suite -replace 'test:', ''
+          $browserFlag = "--project=$browser"
+          $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
+          npx playwright test --grep "@$tag" $browserFlag $modeFlag --output=test-results
         env:
           CI: "1"
-          SUITE: ${{ github.event.inputs.test_suite || 'test:master' }}
-          BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
-          MODE: ${{ github.event.inputs.mode || 'headless' }}
-        run: |
-          $extra = @("--project=$env:BROWSER")
-          if ($env:MODE -eq 'headed') { $extra += '--headed' }
-          npm run $env:SUITE -- @extra
 
       - name: 📊 Upload Playwright HTML Report
         if: always()
@@ -79,14 +79,6 @@ jobs:
           name: playwright-report
           path: reports/
           retention-days: 30
-
-      - name: 📊 Upload Reporting Labs Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporting-labs
-          path: reporting-labs/
-          retention-days: 30    
 
       - name: 📋 Upload Custom Report
         if: always()
