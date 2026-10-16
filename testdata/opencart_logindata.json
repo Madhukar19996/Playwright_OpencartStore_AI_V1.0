@@ -1,7 +1,7 @@
 [
   {
     "testName": "Valid login",
-    "email": "madhukar121@gmail.com",
+    "email": "pavanol@xyz.com",
     "password": "test@123",
     "expected": "success"
   },
