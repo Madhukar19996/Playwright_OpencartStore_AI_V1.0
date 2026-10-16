@@ -34,7 +34,7 @@ on:
         options:
           - headless
           - headed
-        default: "headless"
+        default: "headed"
 
 jobs:
   test:
@@ -62,7 +62,7 @@ jobs:
         run: |
           $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
-          $mode = "${{ github.event.inputs.mode || 'headless' }}"
+          $mode = "${{ github.event.inputs.mode || 'headed' }}"
           $tag = $suite -replace 'test:', ''
           $browserFlag = "--project=$browser"
           $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }

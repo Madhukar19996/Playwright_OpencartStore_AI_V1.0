@@ -9,17 +9,17 @@ node_modules/
 .env
 
 #  Playwright test artifacts 
-/test-results/
-/playwright-report/
+#/test-results/
+#/playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
 
 #  Reports 
-/reports/
+#/reports/
 /allure-results/
-/allure-report/
-/custom-report/
+#/allure-report/
+#/custom-report/
 
 #  Tool / IDE config (local caches, not project files) 
 .claude/
