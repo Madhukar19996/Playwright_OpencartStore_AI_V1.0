@@ -39,8 +39,8 @@ test.describe('Products API Tests', () => {
     // Configuration
     // ---------------------------------------------------------
 
-    const PRODUCT_ID = requireApiNumber('PRODUCT_ID');
-    const LIMIT = requireApiNumber('LIMIT');
+    const getProductId = () => requireApiNumber('PRODUCT_ID');
+    const getLimit = () => requireApiNumber('LIMIT');
     const CATEGORY = 'electronics';
 
     // ---------------------------------------------------------
@@ -59,25 +59,27 @@ test.describe('Products API Tests', () => {
     });
 
     test('GET - Product by ID @master @sanity @api', async ({ request }) => {
-        const route = productRoute(Routes.GET_PRODUCT_BY_ID, PRODUCT_ID);
+        const productId = getProductId();
+        const route = productRoute(Routes.GET_PRODUCT_BY_ID, productId);
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Product lookup should return HTTP 200.').toBe(200);
         const product = await response.json() as Product;
 
-        expect(product.id, 'Returned product id should match the requested id.').toBe(PRODUCT_ID);
+        expect(product.id, 'Returned product id should match the requested id.').toBe(productId);
         assertProductFields(product);
     });
 
     test('GET - Products with limit @master @regression @api', async ({ request }) => {
-        const route = Routes.GET_PRODUCTS_WITH_LIMIT.replace('{limit}', String(LIMIT));
+        const limit = getLimit();
+        const route = Routes.GET_PRODUCTS_WITH_LIMIT.replace('{limit}', String(limit));
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Limited product request should return HTTP 200.').toBe(200);
         const products = await response.json() as Product[];
 
         expect(Array.isArray(products), 'Limited product response should be an array.').toBeTruthy();
-        expect(products.length, 'Product count should match the requested limit.').toBe(LIMIT);
+        expect(products.length, 'Product count should match the requested limit.').toBe(limit);
     });
 
     test('GET - Products sorted ascending @master @regression @api', async ({ request }) => {
@@ -157,7 +159,8 @@ test.describe('Products API Tests', () => {
     // ---------------------------------------------------------
 
     test('PUT - Update product @master @regression @api', async ({ request }) => {
-        const route = productRoute(Routes.UPDATE_PRODUCT, PRODUCT_ID);
+        const productId = getProductId();
+        const route = productRoute(Routes.UPDATE_PRODUCT, productId);
         const response = await request.put(`${API_BASE_URL}${route}`, {
             data: payloads.product.update
         });
@@ -165,7 +168,7 @@ test.describe('Products API Tests', () => {
         expect(response.status(), 'Product update should return HTTP 200.').toBe(200);
         const updated = await response.json() as Product;
 
-        expect(updated.id, 'Updated product id should match the requested id.').toBe(PRODUCT_ID);
+        expect(updated.id, 'Updated product id should match the requested id.').toBe(productId);
         expect(updated.title, 'Updated title should match the submitted title.').toBe(payloads.product.update.title);
         expect(updated.price, 'Updated price should match the submitted price.').toBe(payloads.product.update.price);
         expect(updated.category, 'Updated category should match the submitted category.')
@@ -177,12 +180,13 @@ test.describe('Products API Tests', () => {
     // ---------------------------------------------------------
 
     test('DELETE - Product by ID @master @regression @api', async ({ request }) => {
-        const route = productRoute(Routes.DELETE_PRODUCT, PRODUCT_ID);
+        const productId = getProductId();
+        const route = productRoute(Routes.DELETE_PRODUCT, productId);
         const response = await request.delete(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Product deletion should return HTTP 200.').toBe(200);
         const deleted = await response.json() as Product;
-        expect(deleted.id, 'Delete response should identify the requested product.').toBe(PRODUCT_ID);
+        expect(deleted.id, 'Delete response should identify the requested product.').toBe(productId);
     });
 
     // ---------------------------------------------------------
@@ -190,7 +194,7 @@ test.describe('Products API Tests', () => {
     // ---------------------------------------------------------
 
     test('GET - Product response matches schema @master @regression @api', async ({ request }) => {
-        const route = productRoute(Routes.GET_PRODUCT_BY_ID, PRODUCT_ID);
+        const route = productRoute(Routes.GET_PRODUCT_BY_ID, getProductId());
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Product schema request should return HTTP 200.').toBe(200);

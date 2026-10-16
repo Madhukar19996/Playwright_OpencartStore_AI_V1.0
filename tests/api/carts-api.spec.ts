@@ -25,22 +25,22 @@ test.describe('Carts API Tests', () => {
     // Configuration
     // ---------------------------------------------------------
 
-    const CART_ID = requireApiNumber('CART_ID');
-    const USER_ID = requireApiNumber('USER_ID');
-    const PRODUCT_ID = requireApiNumber('PRODUCT_ID');
-    const LIMIT = requireApiNumber('LIMIT');
-    const START_DATE = requireApiEnv('START_DATE');
-    const END_DATE = requireApiEnv('END_DATE');
-    const createPayload = {
-        userId: USER_ID,
-        date: START_DATE,
-        products: [{ productId: PRODUCT_ID, quantity: 2 }]
-    };
-    const updatePayload = {
-        userId: USER_ID,
-        date: START_DATE,
-        products: [{ productId: PRODUCT_ID, quantity: 5 }]
-    };
+    const getCartId = () => requireApiNumber('CART_ID');
+    const getUserId = () => requireApiNumber('USER_ID');
+    const getProductId = () => requireApiNumber('PRODUCT_ID');
+    const getLimit = () => requireApiNumber('LIMIT');
+    const getStartDate = () => requireApiEnv('START_DATE');
+    const getEndDate = () => requireApiEnv('END_DATE');
+    const createPayload = () => ({
+        userId: getUserId(),
+        date: getStartDate(),
+        products: [{ productId: getProductId(), quantity: 2 }]
+    });
+    const updatePayload = () => ({
+        userId: getUserId(),
+        date: getStartDate(),
+        products: [{ productId: getProductId(), quantity: 5 }]
+    });
 
     // ---------------------------------------------------------
     // GET - Carts
@@ -57,27 +57,30 @@ test.describe('Carts API Tests', () => {
     });
 
     test('GET - Cart by ID @master @sanity @api', async ({ request }) => {
-        const route = cartRoute(Routes.GET_CART_BY_ID, CART_ID);
+        const cartId = getCartId();
+        const route = cartRoute(Routes.GET_CART_BY_ID, cartId);
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Cart lookup should return HTTP 200.').toBe(200);
         const cart = await response.json() as Cart;
 
-        expect(cart.id, 'Returned cart id should match the requested id.').toBe(CART_ID);
+        expect(cart.id, 'Returned cart id should match the requested id.').toBe(cartId);
     });
 
     test('GET - Carts by date range @master @regression @api', async ({ request }) => {
+        const startDate = getStartDate();
+        const endDate = getEndDate();
         const route = Routes.GET_CARTS_BY_DATE_RANGE
-            .replace('{startdate}', encodeURIComponent(START_DATE))
-            .replace('{enddate}', encodeURIComponent(END_DATE));
+            .replace('{startdate}', encodeURIComponent(startDate))
+            .replace('{enddate}', encodeURIComponent(endDate));
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Cart date-range request should return HTTP 200.').toBe(200);
         const carts = await response.json() as Cart[];
 
         expect(Array.isArray(carts), 'Date-range cart response should be an array.').toBeTruthy();
-        const startTime = new Date(START_DATE).getTime();
-        const endTime = new Date(END_DATE).getTime();
+        const startTime = new Date(startDate).getTime();
+        const endTime = new Date(endDate).getTime();
 
         expect(Number.isFinite(startTime), 'Configured start date should be valid.').toBeTruthy();
         expect(Number.isFinite(endTime), 'Configured end date should be valid.').toBeTruthy();
@@ -93,7 +96,8 @@ test.describe('Carts API Tests', () => {
     });
 
     test('GET - Carts for user @master @regression @api', async ({ request }) => {
-        const route = Routes.GET_USER_CART.replace('{userId}', String(USER_ID));
+        const userId = getUserId();
+        const route = Routes.GET_USER_CART.replace('{userId}', String(userId));
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'User cart request should return HTTP 200.').toBe(200);
@@ -102,19 +106,20 @@ test.describe('Carts API Tests', () => {
         expect(Array.isArray(carts), 'User cart response should be an array.').toBeTruthy();
         expect(carts.length, 'The configured user should have cart records.').toBeGreaterThan(0);
         carts.forEach((cart) => {
-            expect(cart.userId, 'Every returned cart should belong to the requested user.').toBe(USER_ID);
+            expect(cart.userId, 'Every returned cart should belong to the requested user.').toBe(userId);
         });
     });
 
     test('GET - Carts with limit @master @regression @api', async ({ request }) => {
-        const route = Routes.GET_CARTS_WITH_LIMIT.replace('{limit}', String(LIMIT));
+        const limit = getLimit();
+        const route = Routes.GET_CARTS_WITH_LIMIT.replace('{limit}', String(limit));
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Limited cart request should return HTTP 200.').toBe(200);
         const carts = await response.json() as Cart[];
 
         expect(Array.isArray(carts), 'Limited cart response should be an array.').toBeTruthy();
-        expect(carts.length, 'Cart count should match the requested limit.').toBe(LIMIT);
+        expect(carts.length, 'Cart count should match the requested limit.').toBe(limit);
     });
 
     test('GET - Carts sorted ascending @master @regression @api', async ({ request }) => {
@@ -146,17 +151,18 @@ test.describe('Carts API Tests', () => {
     // ---------------------------------------------------------
 
     test('POST - Create cart @master @regression @api', async ({ request }) => {
+        const payload = createPayload();
         const createResponse = await request.post(`${API_BASE_URL}${Routes.CREATE_CART}`, {
-            data: createPayload
+            data: payload
         });
 
         expect(createResponse.status(), 'Cart creation should return HTTP 201.').toBe(201);
         const created = await createResponse.json() as Cart;
 
         expect(Number.isInteger(created.id), 'Created cart should include an integer id.').toBeTruthy();
-        expect(created.userId, 'Created cart should use the submitted user id.').toBe(createPayload.userId);
+        expect(created.userId, 'Created cart should use the submitted user id.').toBe(payload.userId);
         expect(created.products, 'Created cart should contain the submitted products.')
-            .toEqual(createPayload.products);
+            .toEqual(payload.products);
 
         const cleanupResponse = await request.delete(
             `${API_BASE_URL}${cartRoute(Routes.DELETE_CART, created.id)}`
@@ -169,18 +175,20 @@ test.describe('Carts API Tests', () => {
     // ---------------------------------------------------------
 
     test('PUT - Update cart @master @regression @api', async ({ request }) => {
-        const route = cartRoute(Routes.UPDATE_CART, CART_ID);
+        const cartId = getCartId();
+        const payload = updatePayload();
+        const route = cartRoute(Routes.UPDATE_CART, cartId);
         const response = await request.put(`${API_BASE_URL}${route}`, {
-            data: updatePayload
+            data: payload
         });
 
         expect(response.status(), 'Cart update should return HTTP 200.').toBe(200);
         const updated = await response.json() as Cart;
 
-        expect(updated.id, 'Updated cart id should match the requested id.').toBe(CART_ID);
-        expect(updated.userId, 'Updated cart should use the submitted user id.').toBe(updatePayload.userId);
+        expect(updated.id, 'Updated cart id should match the requested id.').toBe(cartId);
+        expect(updated.userId, 'Updated cart should use the submitted user id.').toBe(payload.userId);
         expect(updated.products, 'Updated cart should contain the requested quantity.')
-            .toEqual(updatePayload.products);
+            .toEqual(payload.products);
     });
 
     // ---------------------------------------------------------
@@ -188,12 +196,13 @@ test.describe('Carts API Tests', () => {
     // ---------------------------------------------------------
 
     test('DELETE - Cart by ID @master @regression @api', async ({ request }) => {
-        const route = cartRoute(Routes.DELETE_CART, CART_ID);
+        const cartId = getCartId();
+        const route = cartRoute(Routes.DELETE_CART, cartId);
         const response = await request.delete(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Cart deletion should return HTTP 200.').toBe(200);
         const deleted = await response.json() as Cart;
-        expect(deleted.id, 'Delete response should identify the requested cart.').toBe(CART_ID);
+        expect(deleted.id, 'Delete response should identify the requested cart.').toBe(cartId);
     });
 
     // ---------------------------------------------------------
@@ -201,7 +210,7 @@ test.describe('Carts API Tests', () => {
     // ---------------------------------------------------------
 
     test('GET - Cart response matches schema @master @regression @api', async ({ request }) => {
-        const route = cartRoute(Routes.GET_CART_BY_ID, CART_ID);
+        const route = cartRoute(Routes.GET_CART_BY_ID, getCartId());
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Cart schema request should return HTTP 200.').toBe(200);
@@ -221,27 +230,29 @@ test.describe('Carts API Tests', () => {
     // ---------------------------------------------------------
 
     test('POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api', async ({ request }) => {
+        const payload = createPayload();
+        const updatedPayload = updatePayload();
         const createResponse = await request.post(`${API_BASE_URL}${Routes.CREATE_CART}`, {
-            data: createPayload
+            data: payload
         });
 
         expect(createResponse.status(), 'Workflow cart creation should return HTTP 201.').toBe(201);
         const created = await createResponse.json() as Cart;
         expect(Number.isInteger(created.id), 'Workflow should use the generated cart id.').toBeTruthy();
-        expect(created.userId, 'Workflow cart should contain the submitted user id.').toBe(createPayload.userId);
+        expect(created.userId, 'Workflow cart should contain the submitted user id.').toBe(payload.userId);
         expect(created.products, 'Workflow cart should contain the submitted products.')
-            .toEqual(createPayload.products);
+            .toEqual(payload.products);
 
         const updateRoute = cartRoute(Routes.UPDATE_CART, created.id);
         const updateResponse = await request.put(`${API_BASE_URL}${updateRoute}`, {
-            data: updatePayload
+            data: updatedPayload
         });
         expect(updateResponse.status(), 'Workflow cart update should return HTTP 200.').toBe(200);
         const updated = await updateResponse.json() as Cart;
 
         expect(updated.id, 'Updated cart id should match the created id.').toBe(created.id);
         expect(updated.products, 'Workflow should return the updated product quantity.')
-            .toEqual(updatePayload.products);
+            .toEqual(updatedPayload.products);
 
         const deleteRoute = cartRoute(Routes.DELETE_CART, created.id);
         const deleteResponse = await request.delete(`${API_BASE_URL}${deleteRoute}`);

@@ -20,7 +20,7 @@ Timeout: 5000ms
 
 Call log:
   - Expect "toHaveURL" with timeout 5000ms
-    13 × locator resolved to <html dir="ltr" lang="en">…</html>
+    12 × locator resolved to <html dir="ltr" lang="en">…</html>
        - unexpected value "https://awesomeqa.com/ui/index.php?route=account/login"
 
 ```
@@ -90,7 +90,7 @@ Call log:
   - listitem:
     - link "Login":
       - /url: https://awesomeqa.com/ui/index.php?route=account/login
-- text: " Warning: No match for E-Mail Address and/or Password."
+- text: " Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
 - heading "New Customer" [level=2]
 - paragraph:
   - strong: Register Account

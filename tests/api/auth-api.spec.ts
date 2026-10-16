@@ -11,16 +11,15 @@ test.describe('Authentication API Tests', () => {
     // Configuration
     // ---------------------------------------------------------
 
-    const validCredentials = {
-        username: requireApiEnv('FAKESTORE_USERNAME'),
-        password: requireApiEnv('FAKESTORE_PASSWORD')
-    };
-
     // ---------------------------------------------------------
     // POST - Authentication
     // ---------------------------------------------------------
 
     test('POST - Successful login returns a token @master @sanity @api', async ({ request }) => {
+        const validCredentials = {
+            username: requireApiEnv('FAKESTORE_USERNAME'),
+            password: requireApiEnv('FAKESTORE_PASSWORD')
+        };
         const response = await request.post(`${API_BASE_URL}${Routes.AUTH_LOGIN}`, {
             data: validCredentials
         });

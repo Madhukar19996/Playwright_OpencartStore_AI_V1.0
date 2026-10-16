@@ -37,8 +37,8 @@ test.describe('Users API Tests', () => {
     // Configuration
     // ---------------------------------------------------------
 
-    const USER_ID = requireApiNumber('USER_ID');
-    const LIMIT = requireApiNumber('LIMIT');
+    const getUserId = () => requireApiNumber('USER_ID');
+    const getLimit = () => requireApiNumber('LIMIT');
 
     // ---------------------------------------------------------
     // GET - Users
@@ -58,24 +58,26 @@ test.describe('Users API Tests', () => {
     });
 
     test('GET - User by ID @master @sanity @api', async ({ request }) => {
-        const route = userRoute(Routes.GET_USER_BY_ID, USER_ID);
+        const userId = getUserId();
+        const route = userRoute(Routes.GET_USER_BY_ID, userId);
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'User lookup should return HTTP 200.').toBe(200);
         const user = await response.json() as User;
 
-        expect(user.id, 'Returned user id should match the requested id.').toBe(USER_ID);
+        expect(user.id, 'Returned user id should match the requested id.').toBe(userId);
     });
 
     test('GET - Users with limit @master @regression @api', async ({ request }) => {
-        const route = Routes.GET_USERS_WITH_LIMIT.replace('{limit}', String(LIMIT));
+        const limit = getLimit();
+        const route = Routes.GET_USERS_WITH_LIMIT.replace('{limit}', String(limit));
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'Limited user request should return HTTP 200.').toBe(200);
         const users = await response.json() as User[];
 
         expect(Array.isArray(users), 'Limited user response should be an array.').toBeTruthy();
-        expect(users.length, 'User count should match the requested limit.').toBe(LIMIT);
+        expect(users.length, 'User count should match the requested limit.').toBe(limit);
     });
 
     test('GET - Users sorted ascending @master @regression @api', async ({ request }) => {
@@ -127,7 +129,7 @@ test.describe('Users API Tests', () => {
     // ---------------------------------------------------------
 
     test('PUT - Update user @master @regression @api', async ({ request }) => {
-        const route = userRoute(Routes.UPDATE_USER, USER_ID);
+        const route = userRoute(Routes.UPDATE_USER, getUserId());
         const response = await request.put(`${API_BASE_URL}${route}`, {
             data: payloads.user.update
         });
@@ -147,12 +149,13 @@ test.describe('Users API Tests', () => {
     // ---------------------------------------------------------
 
     test('DELETE - User by ID @master @regression @api', async ({ request }) => {
-        const route = userRoute(Routes.DELETE_USER, USER_ID);
+        const userId = getUserId();
+        const route = userRoute(Routes.DELETE_USER, userId);
         const response = await request.delete(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'User deletion should return HTTP 200.').toBe(200);
         const deleted = await response.json() as User;
-        expect(deleted.id, 'Delete response should identify the requested user.').toBe(USER_ID);
+        expect(deleted.id, 'Delete response should identify the requested user.').toBe(userId);
     });
 
     // ---------------------------------------------------------
@@ -160,7 +163,7 @@ test.describe('Users API Tests', () => {
     // ---------------------------------------------------------
 
     test('GET - User response matches schema @master @regression @api', async ({ request }) => {
-        const route = userRoute(Routes.GET_USER_BY_ID, USER_ID);
+        const route = userRoute(Routes.GET_USER_BY_ID, getUserId());
         const response = await request.get(`${API_BASE_URL}${route}`);
 
         expect(response.status(), 'User schema request should return HTTP 200.').toBe(200);

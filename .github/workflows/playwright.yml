@@ -19,7 +19,7 @@ on:
           - test:api
           - test:web
           - test:datadriven
-        default: "test:e2e"
+        default: "test:master"
       browser:
         description: "Select browser"
         type: choice
@@ -62,7 +62,7 @@ jobs:
         shell: pwsh
         env:
           CI: "1"
-          SUITE: ${{ github.event.inputs.test_suite || 'test:e2e' }}
+          SUITE: ${{ github.event.inputs.test_suite || 'test:master' }}
           BROWSER: ${{ github.event.inputs.browser || 'chromium' }}
           MODE: ${{ github.event.inputs.mode || 'headless' }}
         run: |

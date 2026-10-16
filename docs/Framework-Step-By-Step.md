@@ -333,6 +333,8 @@ ADMIN_PASSWORD=admin
 
 > ⚠️ **Important:** For your project, keep the actual `.env` file in `.gitignore` because it contains credentials. And keep only placeholder values in `.env.example`.
 
+API tests load `.env` first and use `.env.example` for any missing values, so they can run without a local `.env` file. Put custom credentials and test IDs in `.env` to override the example values.
+
 ---
 
 ### Step 3 — Add Test Data Files
