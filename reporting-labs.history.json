@@ -356,5 +356,915 @@
     2525
    ]
   }
+ },
+ {
+  "time": 1792124023758,
+  "duration": 29410.928000000014,
+  "passed": 5,
+  "failed": 2,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "f",
+    6969
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6523
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    1884
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1393
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1786
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1187
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    2662
+   ]
+  }
+ },
+ {
+  "time": 1792124079729,
+  "duration": 30273.110999999975,
+  "passed": 6,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    10066
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6419
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    1618
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1374
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1336
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1422
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    2910
+   ]
+  }
+ },
+ {
+  "time": 1792124232262,
+  "duration": 24774.956000000006,
+  "passed": 6,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    6492
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6174
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    1383
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1322
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1388
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1358
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    2621
+   ]
+  }
+ },
+ {
+  "time": 1792124552261,
+  "duration": 43184.831000000006,
+  "passed": 6,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    8020
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6466
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    10365
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    3525
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    4534
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1571
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    3270
+   ]
+  }
+ },
+ {
+  "time": 1792124809622,
+  "duration": 31973.95399999991,
+  "passed": 6,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    6616
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6162
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    1390
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1290
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    7961
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1471
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    3127
+   ]
+  }
+ },
+ {
+  "time": 1792124997432,
+  "duration": 39500.05200000014,
+  "passed": 6,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": {
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    8831
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6076
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    12105
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1336
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1252
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1353
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    3266
+   ]
+  }
+ },
+ {
+  "time": 1792125201210,
+  "duration": 43792.44200000004,
+  "passed": 36,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 36,
+  "tests": {
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Successful login returns a token @master @sanity @api": [
+    "p",
+    730
+   ],
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api": [
+    "p",
+    988
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - All carts @master @sanity @api": [
+    "p",
+    1116
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart by ID @master @sanity @api": [
+    "p",
+    616
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts by date range @master @regression @api": [
+    "p",
+    1176
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts for user @master @regression @api": [
+    "p",
+    541
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts with limit @master @regression @api": [
+    "p",
+    1617
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted ascending @master @regression @api": [
+    "p",
+    1055
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted descending @master @regression @api": [
+    "p",
+    565
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST - Create cart @master @regression @api": [
+    "p",
+    3279
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › PUT - Update cart @master @regression @api": [
+    "p",
+    1362
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › DELETE - Cart by ID @master @regression @api": [
+    "p",
+    858
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart response matches schema @master @regression @api": [
+    "p",
+    1811
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "p",
+    1487
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All products @master @sanity @api": [
+    "p",
+    1023
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product by ID @master @sanity @api": [
+    "p",
+    470
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products with limit @master @regression @api": [
+    "p",
+    849
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted ascending @master @regression @api": [
+    "p",
+    587
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted descending @master @regression @api": [
+    "p",
+    452
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All product categories @master @regression @api": [
+    "p",
+    462
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products by category @master @regression @api": [
+    "p",
+    456
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST - Create product @master @regression @api": [
+    "p",
+    1349
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › PUT - Update product @master @regression @api": [
+    "p",
+    909
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › DELETE - Product by ID @master @regression @api": [
+    "p",
+    465
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product response matches schema @master @regression @api": [
+    "p",
+    532
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "p",
+    2358
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - All users @master @sanity @api": [
+    "p",
+    1116
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User by ID @master @sanity @api": [
+    "p",
+    1928
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users with limit @master @regression @api": [
+    "p",
+    575
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted ascending @master @regression @api": [
+    "p",
+    2238
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted descending @master @regression @api": [
+    "p",
+    555
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST - Create user @master @regression @api": [
+    "p",
+    1625
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › PUT - Update user @master @regression @api": [
+    "p",
+    458
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › DELETE - User by ID @master @regression @api": [
+    "p",
+    613
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User response matches schema @master @regression @api": [
+    "p",
+    628
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "p",
+    1372
+   ]
+  }
+ },
+ {
+  "time": 1792125456686,
+  "duration": 61635.728,
+  "passed": 42,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 43,
+  "tests": {
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Successful login returns a token @master @sanity @api": [
+    "p",
+    1335
+   ],
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api": [
+    "p",
+    731
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - All carts @master @sanity @api": [
+    "p",
+    1536
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart by ID @master @sanity @api": [
+    "p",
+    554
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts by date range @master @regression @api": [
+    "p",
+    609
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts for user @master @regression @api": [
+    "p",
+    946
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts with limit @master @regression @api": [
+    "p",
+    532
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted ascending @master @regression @api": [
+    "p",
+    611
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted descending @master @regression @api": [
+    "p",
+    537
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST - Create cart @master @regression @api": [
+    "p",
+    1322
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › PUT - Update cart @master @regression @api": [
+    "p",
+    455
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › DELETE - Cart by ID @master @regression @api": [
+    "p",
+    579
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart response matches schema @master @regression @api": [
+    "p",
+    732
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "p",
+    1060
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All products @master @sanity @api": [
+    "p",
+    616
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product by ID @master @sanity @api": [
+    "p",
+    789
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products with limit @master @regression @api": [
+    "p",
+    433
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted ascending @master @regression @api": [
+    "p",
+    965
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted descending @master @regression @api": [
+    "p",
+    1237
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All product categories @master @regression @api": [
+    "p",
+    1011
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products by category @master @regression @api": [
+    "p",
+    519
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST - Create product @master @regression @api": [
+    "p",
+    937
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › PUT - Update product @master @regression @api": [
+    "p",
+    982
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › DELETE - Product by ID @master @regression @api": [
+    "p",
+    733
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product response matches schema @master @regression @api": [
+    "p",
+    954
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "p",
+    1467
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - All users @master @sanity @api": [
+    "p",
+    547
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User by ID @master @sanity @api": [
+    "p",
+    546
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users with limit @master @regression @api": [
+    "p",
+    727
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted ascending @master @regression @api": [
+    "p",
+    628
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted descending @master @regression @api": [
+    "p",
+    533
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST - Create user @master @regression @api": [
+    "p",
+    1777
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › PUT - Update user @master @regression @api": [
+    "p",
+    631
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › DELETE - User by ID @master @regression @api": [
+    "p",
+    559
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User response matches schema @master @regression @api": [
+    "p",
+    592
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "p",
+    1551
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    8668
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6261
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    1588
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1304
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1441
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1462
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    2482
+   ]
+  }
+ },
+ {
+  "time": 1792125554870,
+  "duration": 82827.55200000001,
+  "passed": 42,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 43,
+  "tests": {
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Successful login returns a token @master @sanity @api": [
+    "p",
+    815
+   ],
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api": [
+    "p",
+    759
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - All carts @master @sanity @api": [
+    "p",
+    619
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart by ID @master @sanity @api": [
+    "p",
+    1122
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts by date range @master @regression @api": [
+    "p",
+    783
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts for user @master @regression @api": [
+    "p",
+    948
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts with limit @master @regression @api": [
+    "p",
+    1154
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted ascending @master @regression @api": [
+    "p",
+    625
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted descending @master @regression @api": [
+    "p",
+    1064
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST - Create cart @master @regression @api": [
+    "p",
+    976
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › PUT - Update cart @master @regression @api": [
+    "p",
+    478
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › DELETE - Cart by ID @master @regression @api": [
+    "p",
+    1067
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart response matches schema @master @regression @api": [
+    "p",
+    678
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "p",
+    1283
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All products @master @sanity @api": [
+    "p",
+    1939
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product by ID @master @sanity @api": [
+    "p",
+    492
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products with limit @master @regression @api": [
+    "p",
+    470
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted ascending @master @regression @api": [
+    "p",
+    535
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted descending @master @regression @api": [
+    "p",
+    704
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All product categories @master @regression @api": [
+    "p",
+    550
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products by category @master @regression @api": [
+    "p",
+    874
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST - Create product @master @regression @api": [
+    "p",
+    828
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › PUT - Update product @master @regression @api": [
+    "p",
+    475
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › DELETE - Product by ID @master @regression @api": [
+    "p",
+    567
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product response matches schema @master @regression @api": [
+    "p",
+    522
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "p",
+    1194
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - All users @master @sanity @api": [
+    "p",
+    857
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User by ID @master @sanity @api": [
+    "p",
+    573
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users with limit @master @regression @api": [
+    "p",
+    534
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted ascending @master @regression @api": [
+    "p",
+    559
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted descending @master @regression @api": [
+    "p",
+    543
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST - Create user @master @regression @api": [
+    "p",
+    1447
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › PUT - Update user @master @regression @api": [
+    "p",
+    453
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › DELETE - User by ID @master @regression @api": [
+    "p",
+    693
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User response matches schema @master @regression @api": [
+    "p",
+    597
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "p",
+    1509
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "p",
+    10789
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
+    "f",
+    6126
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
+    "p",
+    8284
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
+    "p",
+    1238
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
+    "p",
+    1219
+   ],
+   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
+    "p",
+    1221
+   ],
+   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
+    "p",
+    18914
+   ]
+  }
+ },
+ {
+  "time": 1792131143511,
+  "duration": 49318.276999999995,
+  "passed": 35,
+  "failed": 1,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 36,
+  "tests": {
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Successful login returns a token @master @sanity @api": [
+    "p",
+    1588
+   ],
+   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api": [
+    "p",
+    2124
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - All carts @master @sanity @api": [
+    "p",
+    1141
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart by ID @master @sanity @api": [
+    "p",
+    775
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts by date range @master @regression @api": [
+    "p",
+    1115
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts for user @master @regression @api": [
+    "p",
+    1237
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts with limit @master @regression @api": [
+    "p",
+    1017
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted ascending @master @regression @api": [
+    "p",
+    1114
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted descending @master @regression @api": [
+    "f",
+    30010
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST - Create cart @master @regression @api": [
+    "p",
+    2515
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › PUT - Update cart @master @regression @api": [
+    "p",
+    1105
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › DELETE - Cart by ID @master @regression @api": [
+    "p",
+    1252
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart response matches schema @master @regression @api": [
+    "p",
+    1205
+   ],
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "p",
+    3221
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All products @master @sanity @api": [
+    "p",
+    838
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product by ID @master @sanity @api": [
+    "p",
+    1066
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products with limit @master @regression @api": [
+    "p",
+    1605
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted ascending @master @regression @api": [
+    "p",
+    2264
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted descending @master @regression @api": [
+    "p",
+    1848
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All product categories @master @regression @api": [
+    "p",
+    2432
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products by category @master @regression @api": [
+    "p",
+    908
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST - Create product @master @regression @api": [
+    "p",
+    1687
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › PUT - Update product @master @regression @api": [
+    "p",
+    1768
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › DELETE - Product by ID @master @regression @api": [
+    "p",
+    1287
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product response matches schema @master @regression @api": [
+    "p",
+    899
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "p",
+    2601
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - All users @master @sanity @api": [
+    "p",
+    1709
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User by ID @master @sanity @api": [
+    "p",
+    837
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users with limit @master @regression @api": [
+    "p",
+    1401
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted ascending @master @regression @api": [
+    "p",
+    1815
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted descending @master @regression @api": [
+    "p",
+    721
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST - Create user @master @regression @api": [
+    "p",
+    3624
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › PUT - Update user @master @regression @api": [
+    "p",
+    1358
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › DELETE - User by ID @master @regression @api": [
+    "p",
+    1021
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User response matches schema @master @regression @api": [
+    "p",
+    1363
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "p",
+    2892
+   ]
+  }
  }
 ]

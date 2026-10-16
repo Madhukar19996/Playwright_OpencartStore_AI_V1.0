@@ -35,7 +35,10 @@ function parseLoginCases(data: unknown): LoginCase[] {
 
         const record = row as Record<string, unknown>;
         const testName = record.testName ?? record.TestName;
-        const { email, password, expected } = record;
+        const email = record.email ?? record.Email;
+        const password = record.password ?? record.Password;
+        const rawExpected = record.expected ?? record.Expected;
+        const expected = typeof rawExpected === 'string' ? rawExpected.trim().toLowerCase() : rawExpected;
 
         if (typeof testName !== 'string' || typeof email !== 'string' || typeof password !== 'string') {
             throw new Error(`Login test data row ${index + 1} must include a test name, email, and password.`);

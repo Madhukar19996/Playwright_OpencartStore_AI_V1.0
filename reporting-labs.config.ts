@@ -11,8 +11,8 @@ import type { ReportingLabsOptions } from 'reporting-labs';
 const config: ReportingLabsOptions = {
 
   // ── Look ─────────────────────────────────────────────────────────────────────
-  title: 'OpenCart_AI – regression test suite',                       // shown in the header
-  // logo: 'logo.png',                               // your logo next to the title: a file next to this config (embedded), or an https URL
+  title: 'OpenCart_AI – Regression Test Suite',                       // shown in the header
+  logo: 'logo.png',                               // your logo next to the title: a file next to this config (embedded), or an https URL
   // palette: 'lab',                                  // 'lab' (blue, default) | 'ocean' | 'ember' | 'mono'; viewers can switch
   // accent: '#7C3AED',                               // your brand color instead of the palette accent
   // theme: 'auto',                                   // 'auto' (follows OS, default) | 'light' | 'dark'
