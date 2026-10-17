@@ -1,4 +1,0 @@
-Error checking register page: Error: locator.waitFor: Target page, context or browser has been closed
-Call log:
-  - waiting for getByRole('heading', { name: 'Register Account' }) to be visible
-
