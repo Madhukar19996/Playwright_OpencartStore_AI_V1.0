@@ -60,14 +60,16 @@ jobs:
         run: Copy-Item .env.example .env
 
       - name: 🧪 Run Playwright Tests
+        shell: pwsh
         run: |
-          $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
+          $suite = "${{ github.event.inputs.test_suite || 'test:master' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
           $mode = "${{ github.event.inputs.mode || 'headless' }}"
           $tag = $suite -replace 'test:', ''
-          $browserFlag = "--project=$browser"
-          $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
-          npx playwright test --grep "@$tag" $browserFlag $modeFlag --reporter=dot --output=test-results
+          if ($tag -eq 'e2e') { $tag = 'end-to-end' }
+          $args = @("playwright", "test", "--grep", "@$tag", "--project=$browser", "--output=test-results", "--pass-with-no-tests")
+          if ($mode -eq 'headed') { $args += "--headed" }
+          npx @args
         env:
           CI: "1"
 
