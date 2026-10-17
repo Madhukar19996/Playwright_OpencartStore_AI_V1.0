@@ -36,11 +36,20 @@ on:
           - headless
           - headed
         default: "headless"
+      runner:
+        description: "Where to run (self-hosted = your PC, needed for @api tests)"
+        type: choice
+        options:
+          - github-hosted
+          - self-hosted
+        default: "github-hosted"
 
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    # push / pull_request -> GitHub-hosted (no setup needed, @api tests skipped)
+    # manual run + runner=self-hosted -> your PC (runner must be Idle/online)
+    runs-on: ${{ github.event.inputs.runner == 'self-hosted' && fromJSON('["self-hosted","Windows","X64"]') || 'windows-latest' }}
 
     steps:
       - name: 📥 Checkout Repository
@@ -95,6 +104,13 @@ jobs:
           $tag = $suite -replace 'test:', ''
           if ($tag -eq 'e2e') { $tag = 'end-to-end' }
           $pwArgs = @("--grep", "@$tag", "--project=$browser", "--output=test-results", "--pass-with-no-tests")
+          # fakestoreapi.com (Cloudflare) blocks GitHub-hosted runner IPs with a 403 challenge,
+          # so @api tests are skipped there. On a self-hosted runner (your PC) they run normally.
+          # Selecting test:api on GitHub-hosted still runs them, so the failure stays visible.
+          if ($tag -ne 'api' -and $env:RUNNER_ENVIRONMENT -eq 'github-hosted') {
+            $pwArgs += @("--grep-invert", "@api")
+            Write-Host "NOTE: @api tests are skipped on GitHub-hosted runner (Cloudflare blocks fakestoreapi.com)."
+          }
           if ($mode -eq 'headed') { $pwArgs += "--headed" }
           npx playwright test @pwArgs
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
