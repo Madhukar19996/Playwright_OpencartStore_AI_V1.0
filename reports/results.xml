@@ -1,69 +1,26 @@
-<testsuites id="" name="" tests="5" failures="1" skipped="0" errors="0" time="31.332292000000002">
-<testsuite name="web\login-data-driven.spec.ts" timestamp="2026-10-17T04:25:22.455Z" hostname="chromium" tests="5" failures="1" skipped="0" time="45.385" errors="0">
-<testcase name="Valid login (row 1) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="13.253">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\video.webm]]
-
-[[ATTACHMENT|..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\error-context.md]]
-]]>
-</system-out>
-<failure message="expect(page).toHaveURL(expected) failed" type="expect.toHaveURL">
-<![CDATA[  [chromium] › web\login-data-driven.spec.ts:60:9 › Valid login (row 1) @master @datadriven @web › 3) Validate the login result 
-
-    Error: expect(page).toHaveURL(expected) failed
-
-    Expected pattern: /route=account\/account/
-    Received string:  "https://awesomeqa.com/ui/index.php?route=account/login"
-    Timeout: 5000ms
-
-    Call log:
-      - Expect "toHaveURL" with timeout 5000ms
-        13 × locator resolved to <html dir="ltr" lang="en">…</html>
-           - unexpected value "https://awesomeqa.com/ui/index.php?route=account/login"
-
-
-      75 |         await test.step('3) Validate the login result', async () => {
-      76 |             if (expected === 'success') {
-    > 77 |                 await expect(page).toHaveURL(/route=account\/account/);
-         |                                    ^
-      78 |                 expect(await myAccountPage.isMyAccountPageDisplayed()).toBeTruthy();
-      79 |             } else {
-      80 |                 await expect(page).not.toHaveURL(/route=account\/account/);
-        at D:\Automation\Playwright_Opencart_AI_V1.0\tests\web\login-data-driven.spec.ts:77:36
-        at D:\Automation\Playwright_Opencart_AI_V1.0\tests\web\login-data-driven.spec.ts:75:9
-
-    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\error-context.md
-]]>
-</failure>
+<testsuites id="" name="" tests="4" failures="0" skipped="4" errors="0" time="0.745113">
+<testsuite name="api\carts-api.spec.ts" timestamp="2026-10-17T05:19:23.193Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api" classname="api\carts-api.spec.ts">
+<skipped>
+</skipped>
 </testcase>
-<testcase name="Invalid login (row 2) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="16.076">
-<system-out>
-<![CDATA[Login scenario "Invalid login" completed with expected failure result.
-]]>
-</system-out>
+</testsuite>
+<testsuite name="api\products-api.spec.ts" timestamp="2026-10-17T05:19:23.193Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api" classname="api\products-api.spec.ts">
+<skipped>
+</skipped>
 </testcase>
-<testcase name="Invalid login (row 3) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="4.792">
-<system-out>
-<![CDATA[Login scenario "Invalid login" completed with expected failure result.
-]]>
-</system-out>
+</testsuite>
+<testsuite name="api\users-api.spec.ts" timestamp="2026-10-17T05:19:23.193Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api" classname="api\users-api.spec.ts">
+<skipped>
+</skipped>
 </testcase>
-<testcase name="Invalid login (row 4) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="4.379">
-<system-out>
-<![CDATA[Login scenario "Invalid login" completed with expected failure result.
-]]>
-</system-out>
-</testcase>
-<testcase name="Invalid login (row 5) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="6.885">
-<system-out>
-<![CDATA[Login scenario "Invalid login" completed with expected failure result.
-]]>
-</system-out>
+</testsuite>
+<testsuite name="web\end-to-end-shopping-flow.spec.ts" timestamp="2026-10-17T05:19:23.193Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="End-to-end shopping flow test @master @regression @end-to-end @web" classname="web\end-to-end-shopping-flow.spec.ts">
+<skipped>
+</skipped>
 </testcase>
 </testsuite>
 </testsuites>

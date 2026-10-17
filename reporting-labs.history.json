@@ -1,418 +1,5 @@
 [
  {
-  "time": 1792054189818,
-  "duration": 74237.93099999998,
-  "passed": 41,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 42,
-  "tests": {
-   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Successful login returns a token @master @sanity @api": [
-    "p",
-    1737
-   ],
-   "chromium::tests/api/auth-api.spec.ts::Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api": [
-    "p",
-    1446
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - All carts @master @sanity @api": [
-    "p",
-    1734
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart by ID @master @sanity @api": [
-    "p",
-    1979
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts by date range @master @regression @api": [
-    "p",
-    1222
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts for user @master @regression @api": [
-    "p",
-    1542
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts with limit @master @regression @api": [
-    "p",
-    604
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted ascending @master @regression @api": [
-    "p",
-    1064
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Carts sorted descending @master @regression @api": [
-    "p",
-    1199
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST - Create cart @master @regression @api": [
-    "p",
-    1200
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › PUT - Update cart @master @regression @api": [
-    "p",
-    486
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › DELETE - Cart by ID @master @regression @api": [
-    "p",
-    845
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › GET - Cart response matches schema @master @regression @api": [
-    "p",
-    812
-   ],
-   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
-    "p",
-    1252
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All products @master @sanity @api": [
-    "p",
-    1295
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product by ID @master @sanity @api": [
-    "p",
-    488
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products with limit @master @regression @api": [
-    "p",
-    1122
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted ascending @master @regression @api": [
-    "p",
-    1123
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products sorted descending @master @regression @api": [
-    "p",
-    447
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - All product categories @master @regression @api": [
-    "p",
-    861
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Products by category @master @regression @api": [
-    "p",
-    522
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST - Create product @master @regression @api": [
-    "p",
-    743
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › PUT - Update product @master @regression @api": [
-    "p",
-    650
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › DELETE - Product by ID @master @regression @api": [
-    "p",
-    1054
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › GET - Product response matches schema @master @regression @api": [
-    "p",
-    908
-   ],
-   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
-    "p",
-    1752
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - All users @master @sanity @api": [
-    "p",
-    1520
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User by ID @master @sanity @api": [
-    "p",
-    893
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users with limit @master @regression @api": [
-    "p",
-    646
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted ascending @master @regression @api": [
-    "p",
-    596
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - Users sorted descending @master @regression @api": [
-    "p",
-    1029
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST - Create user @master @regression @api": [
-    "p",
-    1211
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › PUT - Update user @master @regression @api": [
-    "p",
-    1042
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › DELETE - User by ID @master @regression @api": [
-    "p",
-    963
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › GET - User response matches schema @master @regression @api": [
-    "p",
-    895
-   ],
-   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
-    "p",
-    1801
-   ],
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "f",
-    13871
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "p",
-    1986
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    1889
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1632
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    1868
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    2525
-   ]
-  }
- },
- {
-  "time": 1792124023758,
-  "duration": 29410.928000000014,
-  "passed": 5,
-  "failed": 2,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "f",
-    6969
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6523
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    1884
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1393
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    1786
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1187
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    2662
-   ]
-  }
- },
- {
-  "time": 1792124079729,
-  "duration": 30273.110999999975,
-  "passed": 6,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "p",
-    10066
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6419
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    1618
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1374
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    1336
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1422
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    2910
-   ]
-  }
- },
- {
-  "time": 1792124232262,
-  "duration": 24774.956000000006,
-  "passed": 6,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "p",
-    6492
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6174
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    1383
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1322
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    1388
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1358
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    2621
-   ]
-  }
- },
- {
-  "time": 1792124552261,
-  "duration": 43184.831000000006,
-  "passed": 6,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "p",
-    8020
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6466
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    10365
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    3525
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    4534
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1571
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    3270
-   ]
-  }
- },
- {
-  "time": 1792124809622,
-  "duration": 31973.95399999991,
-  "passed": 6,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "p",
-    6616
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6162
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    1390
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1290
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    7961
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1471
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    3127
-   ]
-  }
- },
- {
-  "time": 1792124997432,
-  "duration": 39500.05200000014,
-  "passed": 6,
-  "failed": 1,
-  "flaky": 0,
-  "skipped": 0,
-  "total": 7,
-  "tests": {
-   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
-    "p",
-    8831
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Valid login (row 1) @master @datadriven @web": [
-    "f",
-    6076
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 2) @master @datadriven @web": [
-    "p",
-    12105
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 3) @master @datadriven @web": [
-    "p",
-    1336
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 4) @master @datadriven @web": [
-    "p",
-    1252
-   ],
-   "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
-    "p",
-    1353
-   ],
-   "chromium::tests/web/user-registration.spec.ts::User registration flow @master @sanity @regression @web": [
-    "p",
-    3266
-   ]
-  }
- },
- {
   "time": 1792125201210,
   "duration": 43792.44200000004,
   "passed": 36,
@@ -3240,6 +2827,161 @@
    "chromium::tests/web/login-data-driven.spec.ts::Invalid login (row 5) @master @datadriven @web": [
     "p",
     6885
+   ]
+  }
+ },
+ {
+  "time": 1792213483506,
+  "duration": 620.6279999999999,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 0,
+  "tests": {}
+ },
+ {
+  "time": 1792213914899,
+  "duration": 621.098,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "total": 0,
+  "tests": {}
+ },
+ {
+  "time": 1792213935256,
+  "duration": 524.7909999999999,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 4,
+  "total": 4,
+  "tests": {
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "s",
+    0
+   ]
+  }
+ },
+ {
+  "time": 1792213967544,
+  "duration": 536.923,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 4,
+  "total": 4,
+  "tests": {
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "s",
+    0
+   ]
+  }
+ },
+ {
+  "time": 1792214000484,
+  "duration": 525.8149999999999,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 4,
+  "total": 4,
+  "tests": {
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "s",
+    0
+   ]
+  }
+ },
+ {
+  "time": 1792214212442,
+  "duration": 589.2000000000002,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 4,
+  "total": 4,
+  "tests": {
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "s",
+    0
+   ]
+  }
+ },
+ {
+  "time": 1792214363193,
+  "duration": 745.113,
+  "passed": 0,
+  "failed": 0,
+  "flaky": 0,
+  "skipped": 4,
+  "total": 4,
+  "tests": {
+   "chromium::tests/api/carts-api.spec.ts::Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/products-api.spec.ts::Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/api/users-api.spec.ts::Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api": [
+    "s",
+    0
+   ],
+   "chromium::tests/web/end-to-end-shopping-flow.spec.ts::End-to-end shopping flow test @master @regression @end-to-end @web": [
+    "s",
+    0
    ]
   }
  }
