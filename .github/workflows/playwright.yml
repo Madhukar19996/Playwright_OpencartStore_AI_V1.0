@@ -40,7 +40,7 @@ jobs:
   test:
     timeout-minutes: 60
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: windows-latest
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
