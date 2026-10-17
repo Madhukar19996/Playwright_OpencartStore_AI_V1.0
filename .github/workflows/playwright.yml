@@ -50,25 +50,60 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: npm
 
       - name: 📦 Install Dependencies
         run: npm ci
 
-      - name: 🎭 Install Playwright Browsers
-        run: npx playwright install --with-deps
+      # Installs only the selected browser (faster than installing all of them)
+      - name: 🎭 Install Playwright Browser
+        shell: pwsh
+        run: npx playwright install ${{ github.event.inputs.browser || 'chromium' }}
 
       - name: ⚙️ Create .env File
+        shell: pwsh
         run: Copy-Item .env.example .env
 
+      # Diagnostic: shows what the API returns to the GitHub runner.
+      # Change the URL to your API_BASE_URL + a valid route if different.
+      # Safe to delete once the 403 issue is solved.
+      - name: 🔍 Check API reachability from runner
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $url = "https://fakestoreapi.com/carts"
+          $ua  = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+
+          Write-Host "---- Without browser User-Agent ----"
+          try {
+            $r = Invoke-WebRequest -Uri $url -UseBasicParseing
+            Write-Host "Status: $($r.StatusCode)"
+          } catch {
+            Write-Host "Status: $($_.Exception.Response.StatusCode.value__)"
+            $body = $_.ErrorDetails.Message
+            if ($body) { Write-Host $body.Substring(0, [Math]::Min(300, $body.Length)) }
+          }
+
+          Write-Host "---- With browser User-Agent ----"
+          try {
+            $r = Invoke-WebRequest -Uri $url -UseBasicParseing -UserAgent $ua -Headers @{ Accept = "application/json" }
+            Write-Host "Status: $($r.StatusCode)"
+          } catch {
+            Write-Host "Status: $($_.Exception.Response.StatusCode.value__)"
+            $body = $_.ErrorDetails.Message
+            if ($body) { Write-Host $body.Substring(0, [Math]::Min(300, $body.Length)) }
+          }
+
       - name: 🧪 Run Playwright Tests
+        shell: pwsh
         run: |
           $suite = "${{ github.event.inputs.test_suite || 'test:master' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
           $mode = "${{ github.event.inputs.mode || 'headless' }}"
           $tag = $suite -replace 'test:', ''
-          $browserFlag = "--project=$browser"
-          $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
-          npx playwright test --grep "@$tag" $browserFlag $modeFlag --output=test-results
+          $args = @("playwright", "test", "--grep", "@$tag", "--project=$browser", "--output=test-results")
+          if ($mode -eq 'headed') { $args += "--headed" }
+          npx @args
         env:
           CI: "1"
 
@@ -95,3 +130,11 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 30
+
+      - name: 🧾 Upload Test Results (traces, videos)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 7
