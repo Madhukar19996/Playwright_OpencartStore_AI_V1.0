@@ -1,161 +1,126 @@
-<testsuites id="" name="" tests="43" failures="1" skipped="0" errors="0" time="84.97146099999999">
-<testsuite name="api\auth-api.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="2" failures="0" skipped="0" time="2.574" errors="0">
-<testcase name="Authentication API Tests › POST - Successful login returns a token @master @sanity @api" classname="api\auth-api.spec.ts" time="1.129">
+<testsuites id="" name="" tests="43" failures="0" skipped="0" errors="0" time="48.363904">
+<testsuite name="api\auth-api.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="2" failures="0" skipped="0" time="1.449" errors="0">
+<testcase name="Authentication API Tests › POST - Successful login returns a token @master @sanity @api" classname="api\auth-api.spec.ts" time="0.732">
 </testcase>
-<testcase name="Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api" classname="api\auth-api.spec.ts" time="1.445">
-</testcase>
-</testsuite>
-<testsuite name="api\carts-api.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="12" failures="0" skipped="0" time="15.258" errors="0">
-<testcase name="Carts API Tests › GET - All carts @master @sanity @api" classname="api\carts-api.spec.ts" time="1.087">
-</testcase>
-<testcase name="Carts API Tests › GET - Cart by ID @master @sanity @api" classname="api\carts-api.spec.ts" time="0.885">
-</testcase>
-<testcase name="Carts API Tests › GET - Carts by date range @master @regression @api" classname="api\carts-api.spec.ts" time="1.065">
-</testcase>
-<testcase name="Carts API Tests › GET - Carts for user @master @regression @api" classname="api\carts-api.spec.ts" time="3.584">
-</testcase>
-<testcase name="Carts API Tests › GET - Carts with limit @master @regression @api" classname="api\carts-api.spec.ts" time="0.994">
-</testcase>
-<testcase name="Carts API Tests › GET - Carts sorted ascending @master @regression @api" classname="api\carts-api.spec.ts" time="1.489">
-</testcase>
-<testcase name="Carts API Tests › GET - Carts sorted descending @master @regression @api" classname="api\carts-api.spec.ts" time="0.939">
-</testcase>
-<testcase name="Carts API Tests › POST - Create cart @master @regression @api" classname="api\carts-api.spec.ts" time="1.351">
-</testcase>
-<testcase name="Carts API Tests › PUT - Update cart @master @regression @api" classname="api\carts-api.spec.ts" time="1.041">
-</testcase>
-<testcase name="Carts API Tests › DELETE - Cart by ID @master @regression @api" classname="api\carts-api.spec.ts" time="0.649">
-</testcase>
-<testcase name="Carts API Tests › GET - Cart response matches schema @master @regression @api" classname="api\carts-api.spec.ts" time="1.07">
-</testcase>
-<testcase name="Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api" classname="api\carts-api.spec.ts" time="1.104">
+<testcase name="Authentication API Tests › POST - Invalid login returns the authentication error @master @regression @api" classname="api\auth-api.spec.ts" time="0.717">
 </testcase>
 </testsuite>
-<testsuite name="api\products-api.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="12" failures="0" skipped="0" time="14.388" errors="0">
-<testcase name="Products API Tests › GET - All products @master @sanity @api" classname="api\products-api.spec.ts" time="2.105">
+<testsuite name="api\carts-api.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="12" failures="0" skipped="0" time="9.168" errors="0">
+<testcase name="Carts API Tests › GET - All carts @master @sanity @api" classname="api\carts-api.spec.ts" time="0.563">
 </testcase>
-<testcase name="Products API Tests › GET - Product by ID @master @sanity @api" classname="api\products-api.spec.ts" time="0.727">
+<testcase name="Carts API Tests › GET - Cart by ID @master @sanity @api" classname="api\carts-api.spec.ts" time="0.575">
 </testcase>
-<testcase name="Products API Tests › GET - Products with limit @master @regression @api" classname="api\products-api.spec.ts" time="0.942">
+<testcase name="Carts API Tests › GET - Carts by date range @master @regression @api" classname="api\carts-api.spec.ts" time="0.592">
 </testcase>
-<testcase name="Products API Tests › GET - Products sorted ascending @master @regression @api" classname="api\products-api.spec.ts" time="1.685">
+<testcase name="Carts API Tests › GET - Carts for user @master @regression @api" classname="api\carts-api.spec.ts" time="0.563">
 </testcase>
-<testcase name="Products API Tests › GET - Products sorted descending @master @regression @api" classname="api\products-api.spec.ts" time="0.751">
+<testcase name="Carts API Tests › GET - Carts with limit @master @regression @api" classname="api\carts-api.spec.ts" time="0.547">
 </testcase>
-<testcase name="Products API Tests › GET - All product categories @master @regression @api" classname="api\products-api.spec.ts" time="1.011">
+<testcase name="Carts API Tests › GET - Carts sorted ascending @master @regression @api" classname="api\carts-api.spec.ts" time="0.58">
 </testcase>
-<testcase name="Products API Tests › GET - Products by category @master @regression @api" classname="api\products-api.spec.ts" time="0.613">
+<testcase name="Carts API Tests › GET - Carts sorted descending @master @regression @api" classname="api\carts-api.spec.ts" time="0.574">
 </testcase>
-<testcase name="Products API Tests › POST - Create product @master @regression @api" classname="api\products-api.spec.ts" time="1.205">
+<testcase name="Carts API Tests › POST - Create cart @master @regression @api" classname="api\carts-api.spec.ts" time="0.856">
 </testcase>
-<testcase name="Products API Tests › PUT - Update product @master @regression @api" classname="api\products-api.spec.ts" time="0.839">
+<testcase name="Carts API Tests › PUT - Update cart @master @regression @api" classname="api\carts-api.spec.ts" time="0.969">
 </testcase>
-<testcase name="Products API Tests › DELETE - Product by ID @master @regression @api" classname="api\products-api.spec.ts" time="1.335">
+<testcase name="Carts API Tests › DELETE - Cart by ID @master @regression @api" classname="api\carts-api.spec.ts" time="0.552">
 </testcase>
-<testcase name="Products API Tests › GET - Product response matches schema @master @regression @api" classname="api\products-api.spec.ts" time="1.574">
+<testcase name="Carts API Tests › GET - Cart response matches schema @master @regression @api" classname="api\carts-api.spec.ts" time="1.141">
 </testcase>
-<testcase name="Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api" classname="api\products-api.spec.ts" time="1.601">
-</testcase>
-</testsuite>
-<testsuite name="api\users-api.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="10" failures="0" skipped="0" time="12.429" errors="0">
-<testcase name="Users API Tests › GET - All users @master @sanity @api" classname="api\users-api.spec.ts" time="0.573">
-</testcase>
-<testcase name="Users API Tests › GET - User by ID @master @sanity @api" classname="api\users-api.spec.ts" time="0.839">
-</testcase>
-<testcase name="Users API Tests › GET - Users with limit @master @regression @api" classname="api\users-api.spec.ts" time="1.128">
-</testcase>
-<testcase name="Users API Tests › GET - Users sorted ascending @master @regression @api" classname="api\users-api.spec.ts" time="1.192">
-</testcase>
-<testcase name="Users API Tests › GET - Users sorted descending @master @regression @api" classname="api\users-api.spec.ts" time="1.142">
-</testcase>
-<testcase name="Users API Tests › POST - Create user @master @regression @api" classname="api\users-api.spec.ts" time="2.367">
-</testcase>
-<testcase name="Users API Tests › PUT - Update user @master @regression @api" classname="api\users-api.spec.ts" time="1">
-</testcase>
-<testcase name="Users API Tests › DELETE - User by ID @master @regression @api" classname="api\users-api.spec.ts" time="1.081">
-</testcase>
-<testcase name="Users API Tests › GET - User response matches schema @master @regression @api" classname="api\users-api.spec.ts" time="0.704">
-</testcase>
-<testcase name="Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api" classname="api\users-api.spec.ts" time="2.403">
+<testcase name="Carts API Tests › POST/PUT/DELETE - Cart CRUD workflow @master @end-to-end @api" classname="api\carts-api.spec.ts" time="1.656">
 </testcase>
 </testsuite>
-<testsuite name="web\end-to-end-shopping-flow.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.325" errors="0">
-<testcase name="End-to-end shopping flow test @master @regression @end-to-end @web" classname="web\end-to-end-shopping-flow.spec.ts" time="9.325">
+<testsuite name="api\products-api.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="12" failures="0" skipped="0" time="6.352" errors="0">
+<testcase name="Products API Tests › GET - All products @master @sanity @api" classname="api\products-api.spec.ts" time="0.551">
+</testcase>
+<testcase name="Products API Tests › GET - Product by ID @master @sanity @api" classname="api\products-api.spec.ts" time="0.483">
+</testcase>
+<testcase name="Products API Tests › GET - Products with limit @master @regression @api" classname="api\products-api.spec.ts" time="0.449">
+</testcase>
+<testcase name="Products API Tests › GET - Products sorted ascending @master @regression @api" classname="api\products-api.spec.ts" time="0.457">
+</testcase>
+<testcase name="Products API Tests › GET - Products sorted descending @master @regression @api" classname="api\products-api.spec.ts" time="0.47">
+</testcase>
+<testcase name="Products API Tests › GET - All product categories @master @regression @api" classname="api\products-api.spec.ts" time="0.448">
+</testcase>
+<testcase name="Products API Tests › GET - Products by category @master @regression @api" classname="api\products-api.spec.ts" time="0.439">
+</testcase>
+<testcase name="Products API Tests › POST - Create product @master @regression @api" classname="api\products-api.spec.ts" time="0.698">
+</testcase>
+<testcase name="Products API Tests › PUT - Update product @master @regression @api" classname="api\products-api.spec.ts" time="0.444">
+</testcase>
+<testcase name="Products API Tests › DELETE - Product by ID @master @regression @api" classname="api\products-api.spec.ts" time="0.455">
+</testcase>
+<testcase name="Products API Tests › GET - Product response matches schema @master @regression @api" classname="api\products-api.spec.ts" time="0.476">
+</testcase>
+<testcase name="Products API Tests › POST/PUT/DELETE - Product CRUD workflow @master @end-to-end @api" classname="api\products-api.spec.ts" time="0.982">
+</testcase>
+</testsuite>
+<testsuite name="api\users-api.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="10" failures="0" skipped="0" time="7.076" errors="0">
+<testcase name="Users API Tests › GET - All users @master @sanity @api" classname="api\users-api.spec.ts" time="0.644">
+</testcase>
+<testcase name="Users API Tests › GET - User by ID @master @sanity @api" classname="api\users-api.spec.ts" time="0.547">
+</testcase>
+<testcase name="Users API Tests › GET - Users with limit @master @regression @api" classname="api\users-api.spec.ts" time="0.533">
+</testcase>
+<testcase name="Users API Tests › GET - Users sorted ascending @master @regression @api" classname="api\users-api.spec.ts" time="0.561">
+</testcase>
+<testcase name="Users API Tests › GET - Users sorted descending @master @regression @api" classname="api\users-api.spec.ts" time="0.529">
+</testcase>
+<testcase name="Users API Tests › POST - Create user @master @regression @api" classname="api\users-api.spec.ts" time="1.074">
+</testcase>
+<testcase name="Users API Tests › PUT - Update user @master @regression @api" classname="api\users-api.spec.ts" time="0.579">
+</testcase>
+<testcase name="Users API Tests › DELETE - User by ID @master @regression @api" classname="api\users-api.spec.ts" time="0.547">
+</testcase>
+<testcase name="Users API Tests › GET - User response matches schema @master @regression @api" classname="api\users-api.spec.ts" time="0.594">
+</testcase>
+<testcase name="Users API Tests › POST/PUT/DELETE - User CRUD workflow @master @end-to-end @api" classname="api\users-api.spec.ts" time="1.468">
+</testcase>
+</testsuite>
+<testsuite name="web\end-to-end-shopping-flow.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="1" failures="0" skipped="0" time="27.516" errors="0">
+<testcase name="End-to-end shopping flow test @master @regression @end-to-end @web" classname="web\end-to-end-shopping-flow.spec.ts" time="27.516">
 <system-out>
 <![CDATA[✅ ✔️ End-to-end shopping flow completed successfully!
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="web\login-data-driven.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="5" failures="1" skipped="0" time="14.648" errors="0">
-<testcase name="Valid login (row 1) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="6.682">
+<testsuite name="web\login-data-driven.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="5" failures="0" skipped="0" time="26.026" errors="0">
+<testcase name="Valid login (row 1) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="11.445">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\test-failed-1.png]]
-
-[[ATTACHMENT|..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\error-context.md]]
+<![CDATA[Login scenario "Valid login" completed with expected success result.
 ]]>
 </system-out>
-<failure message="expect(page).toHaveURL(expected) failed" type="expect.toHaveURL">
-<![CDATA[  [chromium] › web\login-data-driven.spec.ts:60:9 › Valid login (row 1) @master @datadriven @web › 3) Validate the login result 
-
-    Error: expect(page).toHaveURL(expected) failed
-
-    Expected pattern: /route=account\/account/
-    Received string:  "https://awesomeqa.com/ui/index.php?route=account/login"
-    Timeout: 5000ms
-
-    Call log:
-      - Expect "toHaveURL" with timeout 5000ms
-        13 × locator resolved to <html dir="ltr" lang="en">…</html>
-           - unexpected value "https://awesomeqa.com/ui/index.php?route=account/login"
-
-
-      75 |         await test.step('3) Validate the login result', async () => {
-      76 |             if (expected === 'success') {
-    > 77 |                 await expect(page).toHaveURL(/route=account\/account/);
-         |                                    ^
-      78 |                 expect(await myAccountPage.isMyAccountPageDisplayed()).toBeTruthy();
-      79 |             } else {
-      80 |                 await expect(page).not.toHaveURL(/route=account\/account/);
-        at D:\Automation\Playwright_Opencart_AI_V1.0\tests\web\login-data-driven.spec.ts:77:36
-        at D:\Automation\Playwright_Opencart_AI_V1.0\tests\web\login-data-driven.spec.ts:75:9
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\web-login-data-driven-Vali-05088-row-1-master-datadriven-web-chromium\error-context.md
-]]>
-</failure>
 </testcase>
-<testcase name="Invalid login (row 2) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="1.527">
+<testcase name="Invalid login (row 2) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="3.813">
 <system-out>
 <![CDATA[Login scenario "Invalid login" completed with expected failure result.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Invalid login (row 3) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="2.022">
+<testcase name="Invalid login (row 3) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="3.021">
 <system-out>
 <![CDATA[Login scenario "Invalid login" completed with expected failure result.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Invalid login (row 4) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="1.961">
+<testcase name="Invalid login (row 4) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="5.183">
 <system-out>
 <![CDATA[Login scenario "Invalid login" completed with expected failure result.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Invalid login (row 5) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="2.456">
+<testcase name="Invalid login (row 5) @master @datadriven @web" classname="web\login-data-driven.spec.ts" time="2.564">
 <system-out>
 <![CDATA[Login scenario "Invalid login" completed with expected failure result.
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="web\user-registration.spec.ts" timestamp="2026-10-16T09:07:23.898Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.984" errors="0">
-<testcase name="User registration flow @master @sanity @regression @web" classname="web\user-registration.spec.ts" time="2.984">
+<testsuite name="web\user-registration.spec.ts" timestamp="2026-10-17T02:42:28.126Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.523" errors="0">
+<testcase name="User registration flow @master @sanity @regression @web" classname="web\user-registration.spec.ts" time="4.523">
 <system-out>
 <![CDATA[✅ ✔️ User registration flow completed successfully!
 ]]>
