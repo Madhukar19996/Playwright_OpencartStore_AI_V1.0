@@ -1,5 +1,4 @@
-#To run manually: go to your repo → Actions → Playwright Tests → Run workflow → choose your parameters → Run.
-
+# To run manually: go to your repo → Actions → Playwright Tests → Run workflow → choose your parameters → Run.
 name: 🎭 Playwright Tests
 
 on:
@@ -20,7 +19,7 @@ on:
           - test:api
           - test:web
           - test:datadriven
-        default: "test:master"
+        default: "test:e2e"
       browser:
         description: "Select browser"
         type: choice
@@ -40,78 +39,35 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
-
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, Windows, X64]
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🟢 Set up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: npm
 
       - name: 📦 Install Dependencies
         run: npm ci
 
-      # Installs only the selected browser (faster than installing all of them)
-      - name: 🎭 Install Playwright Browser
-        shell: pwsh
-        run: npx playwright install ${{ github.event.inputs.browser || 'chromium' }}
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       - name: ⚙️ Create .env File
-        shell: pwsh
         run: Copy-Item .env.example .env
 
-      # Diagnostic: shows what the API returns to the GitHub runner.
-      # Change the URL to your API_BASE_URL + a valid route if different.
-      # Safe to delete once the 403 issue is solved.
-      - name: 🔍 Check API reachability from runner
-        shell: pwsh
-        continue-on-error: true
-        run: |
-          $url = "https://fakestoreapi.com/carts"
-          $ua  = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-
-          Write-Host "---- Without browser User-Agent ----"
-          try {
-            $r = Invoke-WebRequest -Uri $url -UseBasicParseing
-            Write-Host "Status: $($r.StatusCode)"
-          } catch {
-            Write-Host "Status: $($_.Exception.Response.StatusCode.value__)"
-            $body = $_.ErrorDetails.Message
-            if ($body) { Write-Host $body.Substring(0, [Math]::Min(300, $body.Length)) }
-          }
-
-          Write-Host "---- With browser User-Agent ----"
-          try {
-            $r = Invoke-WebRequest -Uri $url -UseBasicParseing -UserAgent $ua -Headers @{ Accept = "application/json" }
-            Write-Host "Status: $($r.StatusCode)"
-          } catch {
-            Write-Host "Status: $($_.Exception.Response.StatusCode.value__)"
-            $body = $_.ErrorDetails.Message
-            if ($body) { Write-Host $body.Substring(0, [Math]::Min(300, $body.Length)) }
-          }
-
       - name: 🧪 Run Playwright Tests
-        shell: pwsh
         run: |
-          $suite = "${{ github.event.inputs.test_suite || 'test:master' }}"
+          $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
           $mode = "${{ github.event.inputs.mode || 'headless' }}"
           $tag = $suite -replace 'test:', ''
-          $args = @("playwright", "test", "--grep", "@$tag", "--project=$browser", "--output=test-results")
-          if ($mode -eq 'headed') { $args += "--headed" }
-          npx @args
-
-      - name: 🔎 List generated report files
-        if: always()
-        shell: pwsh
-        run: |
-          Get-ChildItem -Recurse -File |
-            Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-15) -and $_.FullName -notmatch 'node_modules|\\\.git\\' } |
-            Select-Object -ExpandProperty FullName
+          $browserFlag = "--project=$browser"
+          $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
+          npx playwright test --grep "@$tag" $browserFlag $modeFlag --reporter=dot --output=test-results
         env:
           CI: "1"
 
@@ -131,15 +87,6 @@ jobs:
           path: custom-report/
           retention-days: 30
 
-      - name: 🧪 Upload Reporting Labs Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporting-labs-report
-          path: <reporting-labs-folder>/
-          if-no-files-found: warn
-          retention-days: 30       
-
       - name: 📈 Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
@@ -147,11 +94,3 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 30
-
-      - name: 🧾 Upload Test Results (traces, videos)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: test-results/
-          retention-days: 7
