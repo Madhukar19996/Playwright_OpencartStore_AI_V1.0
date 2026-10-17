@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { Routes } from '../api/endpoints/routes';
 
-dotenv.config({ path: ['.env', '.env.example'] });
+dotenv.config();
 
 export const API_BASE_URL = (process.env.API_BASE_URL || Routes.BASE_URL).replace(/\/$/, '');
 

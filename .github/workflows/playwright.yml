@@ -68,10 +68,6 @@ jobs:
         shell: pwsh
         run: npx playwright install ${{ github.event.inputs.browser || 'chromium' }}
 
-      - name: ⚙️ Create .env File
-        shell: pwsh
-        run: Copy-Item .env.example .env
-
       # Diagnostic: shows exactly what the API returns to the GitHub runner.
       # Change the URL if your API_BASE_URL is different. Safe to delete later.
       - name: 🔍 Check API reachability from runner
