@@ -104,6 +104,14 @@ jobs:
           $args = @("playwright", "test", "--grep", "@$tag", "--project=$browser", "--output=test-results")
           if ($mode -eq 'headed') { $args += "--headed" }
           npx @args
+
+      - name: 🔎 List generated report files
+        if: always()
+        shell: pwsh
+        run: |
+          Get-ChildItem -Recurse -File |
+            Where-Object { $_.LastWriteTime -gt (Get-Date).AddMinutes(-15) -and $_.FullName -notmatch 'node_modules|\\\.git\\' } |
+            Select-Object -ExpandProperty FullName
         env:
           CI: "1"
 
@@ -123,13 +131,14 @@ jobs:
           path: custom-report/
           retention-days: 30
 
-      - name: 📊 Upload Report Labs Report
+      - name: 🧪 Upload Reporting Labs Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: reporting-labs
-          path: reporting-labs/
-          retention-days: 30          
+          name: reporting-labs-report
+          path: <reporting-labs-folder>/
+          if-no-files-found: warn
+          retention-days: 30       
 
       - name: 📈 Upload Allure Results
         if: always()
