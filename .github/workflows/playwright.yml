@@ -123,6 +123,14 @@ jobs:
           path: custom-report/
           retention-days: 30
 
+      - name: 📊 Upload Report Labs Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporting-labs
+          path: reporting-labs/
+          retention-days: 30          
+
       - name: 📈 Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
