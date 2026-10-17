@@ -63,6 +63,29 @@ jobs:
         shell: pwsh
         run: Copy-Item .env.example .env
 
+      # Diagnostic: shows exactly what the API returns to the GitHub runner.
+      # Change the URL if your API_BASE_URL is different. Safe to delete later.
+      - name: 🔍 Check API reachability from runner
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $url = "https://fakestoreapi.com/carts"
+          $ua  = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+
+          foreach ($case in @("no-user-agent", "browser-user-agent")) {
+            Write-Host "---- $case ----"
+            if ($case -eq "no-user-agent") {
+              $r = Invoke-WebRequest -Uri $url -SkipHttpErrorCheck
+            } else {
+              $r = Invoke-WebRequest -Uri $url -SkipHttpErrorCheck -UserAgent $ua -Headers @{ Accept = "application/json" }
+            }
+            Write-Host "Status : $($r.StatusCode)"
+            Write-Host "Server : $($r.Headers['Server'])"
+            Write-Host "CF-Ray : $($r.Headers['CF-Ray'])"
+            $body = [string]$r.Content
+            Write-Host "Body   : $($body.Substring(0, [Math]::Min(300, $body.Length)))"
+          }
+
       - name: 🧪 Run Playwright Tests
         shell: pwsh
         run: |
