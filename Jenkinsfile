@@ -17,7 +17,7 @@ Pipeline Stages:
 pipeline {
   agent any
   tools {
-    git 'Default'
+    git 'MyGIT'
   }
   options { timestamps() }
   parameters {
@@ -91,7 +91,7 @@ pipeline {
         reportFiles: '*.html',
         reportName: 'Custom Test Report'
       ])
-      emailext(
+     /* emailext(
         subject: "Jenkins Build: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
         body: """
             <h2>Playwright Test Execution Report</h2>
@@ -110,7 +110,7 @@ pipeline {
         from: "SENDER_EMAIL_ADDRESS", //Replace with the sender's email address
         replyTo: "RECIVER_EMAIL_ADDRESS",  //Replace with the recipient's email address
         mimeType: "text/html" //Defines the format of the email body. text/html allows HTML formatting (tables, colors, bold text, links, etc.).
-      )
+      ) */
     }
     success {
       script {
