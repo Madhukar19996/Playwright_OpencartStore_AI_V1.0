@@ -117,9 +117,9 @@ pipeline {
               <a href="${env.BUILD_URL}Reporting_20Labs_20Report">Open Reporting Labs Report</a>
             </p>
         """,
-        to: "RECIVER_EMAIL_ADDRESS", //Replace with the recipient's email address
-        from: "SENDER_EMAIL_ADDRESS", //Replace with the sender's email address
-        replyTo: "RECIVER_EMAIL_ADDRESS",  //Replace with the recipient's email address
+        to: "dummymailmadhukar@gmail.com", //Replace with the recipient's email address
+        from: "mrsid421@gmail.com", //Replace with the sender's email address
+        replyTo: "dummymailmadhukar@gmail.com",  //Replace with the recipient's email address
         mimeType: "text/html" //Defines the format of the email body. text/html allows HTML formatting (tables, colors, bold text, links, etc.).
       ) 
     }
