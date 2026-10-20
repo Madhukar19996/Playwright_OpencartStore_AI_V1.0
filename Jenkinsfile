@@ -101,6 +101,7 @@ pipeline {
         reportFiles: 'index.html',
         reportName: 'Reporting Labs Report'
       ])
+      // Email notification with the reports attached (needs the Email Extension plugin + SMTP setup)
       emailext(
         subject: "Jenkins Build: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
         body: """
@@ -117,11 +118,13 @@ pipeline {
               <a href="${env.BUILD_URL}Reporting_20Labs_20Report">Open Reporting Labs Report</a>
             </p>
         """,
-        to: "mrsid421@gmail.com", //Replace with the recipient's email address
-        from: "dummymailmadhukar@gmail.com", //Replace with the sender's email address
-        replyTo: "mrsid421@gmail.com",  //Replace with the recipient's email address
-        mimeType: "text/html" //Defines the format of the email body. text/html allows HTML formatting (tables, colors, bold text, links, etc.).
-      ) 
+        to: "madhukar19996@gmail.com", // Receiver: report arrives in this inbox (comma separated for many)
+        from: "dummymailmadhukar@gmail.com", // Sender: must be the same Gmail whose App Password is saved in Jenkins SMTP credentials
+        replyTo: "madhukar19996@gmail.com",
+        // Reports are attached because the links above only open on the PC where Jenkins runs (localhost)
+        attachmentsPattern: 'reporting-labs/index.html,reporting-labs/report.pdf',
+        mimeType: "text/html" // text/html allows HTML formatting (tables, colors, bold text, links, etc.)
+      )
     }
     success {
       script {
