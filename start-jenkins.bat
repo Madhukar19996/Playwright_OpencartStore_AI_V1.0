@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -NoExit -File "D:\Automation\start-jenkins.ps1"
